@@ -1,8 +1,8 @@
-commit 063f7e4fd4aa6165aa20d5577cb9f9d332f74824
-Author: Bryce <lichao@cyeam.com>
-Date:   Mon Sep 5 20:32:08 2016 +0800
+commit 40ace6c19cb586af2ec7756e19414cca206b07c5
+Author: mnhkahn <lichao0407@gmail.com>
+Date:   Mon Sep 5 20:39:57 2016 +0800
 
-    Initial commit
+    first commit
 
- create mode 100644 LICENSE
- create mode 100644 README.md
+ create mode 100644 VERSION
+ create mode 100644 build.sh
