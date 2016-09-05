@@ -1,46 +1,23 @@
-Date: 2016年 9月 5日 星期一 21时21分45秒 CST
+Date: 2016年 9月 5日 星期一 21时29分47秒 CST
 Branch: develop
-commit b8e0bf75397f265731c368ff5e68ea2809bf7f6b
+commit 4102924acc914c89d8545f66c4a5e399333cb3e5
 Author: mnhkahn <lichao0407@gmail.com>
-Date:   Mon Sep 5 20:41:44 2016 +0800
+Date:   Mon Sep 5 21:22:03 2016 +0800
 
-    sync
+    add git diff, bee version
 
-diff --git a/VERSION b/VERSION
-index b5ad04e..708e17f 100644
---- a/VERSION
-+++ b/VERSION
-@@ -1,8 +1,8 @@
--commit 40ace6c19cb586af2ec7756e19414cca206b07c5
-+Date: 2016年 9月 5日 星期一 21时21分45秒 CST
-+Branch: develop
-+commit b8e0bf75397f265731c368ff5e68ea2809bf7f6b
- Author: mnhkahn <lichao0407@gmail.com>
--Date:   Mon Sep 5 20:39:57 2016 +0800
-+Date:   Mon Sep 5 20:41:44 2016 +0800
- 
--    first commit
-+    sync
- 
-- create mode 100644 VERSION
-- create mode 100644 build.sh
 diff --git a/build.sh b/build.sh
-index 131b5cb..4c1ef0b 100644
+index 4c1ef0b..c581143 100644
 --- a/build.sh
 +++ b/build.sh
-@@ -1,2 +1,11 @@
-+#!/bin/sh 
- echo "" > VERSION
--git show --summary > VERSION
-+
-+d=$(date)
-+echo "Date: $d" > VERSION
-+branch=$(git branch | grep \* | cut -d ' ' -f2)
-+echo "Branch: $branch"  >> VERSION
-+git show --summary >> VERSION
-+git diff >> VERSION
-+bee version >> VERSION
-+
+@@ -6,6 +6,6 @@ echo "Date: $d" > VERSION
+ branch=$(git branch | grep \* | cut -d ' ' -f2)
+ echo "Branch: $branch"  >> VERSION
+ git show --summary >> VERSION
+-git diff >> VERSION
++git diff `git status -s |grep -v ^\ D |grep -v VERSION |cut -b4-` >> VERSION
+ bee version >> VERSION
+ 
 [35m[1m______
 | ___ \
 | |_/ /  ___   ___
